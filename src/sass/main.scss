@@ -1,0 +1,29 @@
+html {
+  .background{
+    min-height:100%;
+      min-width:100%;
+      height:auto;
+      width:100%;
+      position:absolute;
+      z-index: -1;
+      margin:auto;
+}
+}
+
+.crab-box{
+  margin-left: 200px;
+  position: relative;
+  top: 600px;
+  height: 100px;
+  width: 900px;
+  border: solid;
+}
+
+// .background {
+//   height: 610px;
+//   width: 100%;
+// }
+
+// .heading{
+//   height: 100px;
+// }
