@@ -38,6 +38,7 @@ class Badcrab{
   }
 }
 
+
 var badCrab= new Badcrab()
 console.assert(badCrab instanceof Badcrab);
 
@@ -71,11 +72,15 @@ var playerSpaceCount = 0;
 // $(document).ready(function()
 // };
 
-$(".go").click(moveCrab)
-function moveCrab() {
+
+$(".go").one("click", function moveCrab() {
 
     $(".badcrab-box").animate({left: "+=900"}, 10000);
-};
+
+});
+
+
+
 
 $(".music-player").click(function () {
   var sound = $(".music");
@@ -101,9 +106,17 @@ document.body.onkeyup = function(e){
     if(e.keyCode == 32){
       $(document).ready(function() {
           $(".goodcrab-box").animate({left: "+=100"});
+          if (collision2(badcrab, cookie)) {
+            $(".goodcrab-box").stop();
+          }
+        if (collision(goodcrab, cookie)) {
+            $(".goodcrab-box").stop();
+          }
       });
     }
 }
+
+
 // $(document).ready(function () {
 //     $(document).keyup(function (key) {
 //         // if (cond == true) {
@@ -132,11 +145,14 @@ function collision(goodcrab, cookie) {
      var b2 = y2 + h2;
      var r2 = x2 + w2;
 
-     if (b1 < y2 || y1 > b2 || r1 < x2 || x1 > r2) return false;
-     return true;
+     if (b1 < y2 || y1 > b2 || r1 < x2 || x1 > r2) return;
+     return "You Win! Click for level 2";
    }
    window.setInterval(function() {
     $('.result1').text(collision(goodcrab, cookie));
+    // if (collision(goodcrab, cookie)) {
+    //   $('.badcrab-box').hide()
+    // }
 }, );
 
 function collision2(badcrab, cookie) {
@@ -153,9 +169,17 @@ function collision2(badcrab, cookie) {
      var b2 = y2 + h2;
      var r2 = x2 + w2;
 
-     if (b1 < y2 || y1 > b2 || r1 < x2 || x1 > r2) return false;
-     return true;
+     if (b1 < y2 || y1 > b2 || r1 < x2 || x1 > r2) return;
+     return "You Lose! Play Again?";
    }
    window.setInterval(function() {
     $('.result2').text(collision2(badcrab, cookie));
-}, );
+    // if (collision2(badcrab, cookie)) {
+    //   $('.goodcrab-box').hide()
+    // }
+},);
+
+
+// window.setInterval(function() {
+//  $('.goodcrab-box').hide(collision2(badcrab, cookie));
+// },);
