@@ -14,7 +14,7 @@ class Goodcrab{
 document.body.onkeyup = function movecrab(e){
     if(e.keyCode == 32){
       $(document).ready(function() {
-          $(".goodcrab-box").animate({left: "+=100"});
+          $(".goodcrab-box").animate({left: "+=40"});
           if (collision2(badcrab, cookie)) {
             $(".goodcrab-box").stop();
           }

@@ -17,7 +17,7 @@ function collision(goodcrab, cookie) {
      var r2 = x2 + w2;
 
      if (b1 < y2 || y1 > b2 || r1 < x2 || x1 > r2) return;
-     return "You Win! Click for level 2";
+     return "You Win!";
    }
    window.setInterval(function() {
     $('.result1').text(collision(goodcrab, cookie));

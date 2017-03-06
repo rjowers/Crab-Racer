@@ -29,7 +29,7 @@ h1 {
   float: right;
   margin-top: 200px;
   margin-right: 90px;
-  border: solid; }
+  border-left: solid; }
 
 .cookie {
   height: 50px;
